@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.profile button {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    border: 4px solid #00000020;
+    background-image: url('https://i.postimg.cc/4xRrCFVP/Screenshot-20251019-072504.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+.name-frame, .sub-frame, footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.name-frame {
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 25px;
+    background: rgba(0,0,0,0.08);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5), inset 0 0 30px rgba(0,0,0,0.3);
+    margin-top: 12px;
+}
+
+.name-frame h1 {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(270deg, pink, orange, skyblue, red, green, yellow);
+    background-size: 1200% 1200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 8s ease infinite, glow 2s ease-in-out infinite alternate;
+}
+
+.sub-frame {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.05);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+    margin-top: 10px;
+}
+
+.sub-frame p {
+    font-size: 18px;
+    font-weight: 700;
+    background: linear-gradient(270deg, #ff5f6d, #ffc371, #4facfe, #00f2fe);
+    background-size: 1000% 1000%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 6s ease infinite;
+}
+
+footer {
+    width: 80%;
+    border-radius: 15px;
+    padding: 10px 0;
+    margin-top: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4) inset;
+}
+
+footer p {
+    font-weight: 800;
+    font-size: 18px;
+    margin-top: -5px;
+    background: linear-gradient(270deg, pink, orange, skyblue, red, green, yellow);
+    background-size: 1200% 1200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFooter 8s ease infinite, glowFooter 2s ease-in-out infinite alternate;
+}
+
+/* ⭐ ছোট ছোট রঙিন তারাবাতি */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, white, transparent);
+    animation: twinkle 2s infinite ease-in-out, float 6s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-10px) translateX(5px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+.star:nth-child(1) { background: #ff66c4; animation-delay: 0s; }
+.star:nth-child(2) { background: #00e5ff; animation-delay: 0.5s; }
+.star:nth-child(3) { background: #ffb300; animation-delay: 1s; }
+.star:nth-child(4) { background: #00ff99; animation-delay: 1.5s; }
+.star:nth-child(5) { background: #ff4d4d; animation-delay: 2s; }
+
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+    50% { text-shadow: 0 0 25px rgba(255,255,255,0.6); }
+}
+
+@keyframes gradientFooter {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glowFooter {
+    0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+    50% { text-shadow: 0 0 20px rgba(255,255,255,0.6); }
+}
+
+/* বাটন গ্রিড */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 90%;
+    max-width: 400px;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+.buttons a {
+    display: block;
+    width: 110px;
+    height: 110px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 1000;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.buttons a:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+#facebookBtn { background-image: url('https://i.postimg.cc/qRk4J2fv/Picsart-25-10-16-03-06-11-742.jpg'); background-size: cover; background-position: center; }
+#instagramBtn { background-image: url('https://i.postimg.cc/fTZzB4q0/Picsart-25-10-16-03-17-13-673.jpg'); background-size: cover; background-position: center; }
+#tiktokBtn { background-image: url('https://i.postimg.cc/RVjTjRfB/Picsart-25-10-16-03-19-14-354.jpg'); background-size: cover; background-position: center; }
+#phoneBtn { background-image: url('https://i.postimg.cc/PJDMxvns/8176ff883b2a176fda0837019474a6e4.jpg'); background-size: cover; background-position: center; }
+#whatsappBtn { background-image: url('https://i.ibb.co/RG0852VN/whatsapp.png'); background-size: cover; background-position: center; }
+#telegramBtn { background-image: url('https://i.ibb.co/rGYzHRZL/telegram.png'); background-size: cover; background-position: center; }
+#websiteBtn { background-image: url('https://i.ibb.co/HLfZ3RpJ/website-img.png'); background-size: cover; background-position: center; }
+#emailBtn { background-image: url('https://i.ibb.co/tMSdxZHk/email-image.png'); background-size: cover; background-position: center; }
